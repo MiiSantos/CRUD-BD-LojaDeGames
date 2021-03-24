@@ -1,0 +1,42 @@
+package org.generation.Loja_de_games.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@Entity
+@Table(name= "tb_categoria")
+public class Categoria {
+	
+	@Id
+	@GeneratedValue
+	private long id;
+	
+	@NotNull
+	private String categoria;
+	
+	@OneToMany
+	@JsonIgnoreProperties("categoria")
+	private Produto produto;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+}

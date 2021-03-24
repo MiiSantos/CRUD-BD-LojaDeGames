@@ -1,0 +1,5 @@
+package org.generation.Loja_de_games.repository;
+
+public interface CategoriaRepository {
+
+}
